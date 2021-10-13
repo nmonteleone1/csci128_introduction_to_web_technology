@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A3-Task1</title>
+    <script>
+        function generateFrogs() {
+			var num = Number(document.getElementById("number").value);
+            var frogtable = "";
+            var frogs = "";
+            for(let i = 1; i < 11; i++) {
+                frogs = frogs + "&#x1F438";
+                frogtable = frogtable + "<br/>" + num + " x " + frogs + " = " + (num * i);
+            }
+            document.getElementById("frogTimestable").innerHTML = frogtable;
+		}
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <span>Enter a positive integer to generate FROG-timestable:</span>
+            </td>
+            <td>
+                <input type="text" id="number"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <button onClick="generateFrogs()">Generate FROG-Timestable</button>
+            </td>
+        </tr>
+    </table>
+    <span id="frogTimestable"></span>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A3-Task3</title>
+    <script>
+
+        var emojiList = ["&#128520", "&#129313", "&#128151", "&#128507"];
+
+		var counterSchedule;
+
+		function startCounter() {
+			if(!counterSchedule) {
+				counterSchedule = setInterval(animateCounter, 2000);
+			}
+		}
+
+		function animateCounter() {
+            var emoji = emojiList[Math.floor(Math.random()*4)];
+            counterEmojis.innerHTML = emoji;
+		}
+
+		function stopCounter() {
+			clearInterval(counterSchedule);
+			counterSchedule = null;
+		}
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <button onClick="startCounter()">Display Random Emoji</button>
+            </td>
+            <td>
+                <button onClick="stopCounter()">Stop</button>
+            </td>
+        </tr>
+    </table>
+    <span id="counterEmojis"></span>
+</body>
+</html>

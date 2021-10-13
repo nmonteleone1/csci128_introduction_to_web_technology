@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A2-Task4</title>
+    <script>
+
+    </script>
+</head>
+<body>
+    <form action="http://holiday.whosville.com/query" method="get">
+        <table>
+            <tr>
+                <td>Number of adults: </td>
+                <td><input type="text" name="a"/></td>
+            </tr>
+            <tr>
+                <td>Number of children:</td>
+                <td><input type="text" name="c"/></td>
+            </tr>
+            <tr>
+                <td>Stay duration (days):</td>
+                <td><input type="text" name="d"/></td>
+            </tr>
+            <tr>
+                <td>Accommodation type:</td>
+                <td>
+                    <select name="accom">
+                        <option value="1">Cabin</option>
+                        <option value="2">Dormitory</option>
+                        <option value="3">Cottage</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Cave tours:</td>
+                <td>
+                    <input type="checkbox" name="t" value="K"/> Ktar Koon Cave tour<br>
+                    <input type="checkbox" name="t" value="B"/> Beyoh Boon Cave tour<br>
+                    <input type="checkbox" name="t" value="S"/> Sontain Soon Cave tour<br>
+                </td>
+            </tr>
+            <tr>
+                <td>Included internet: </td>
+                <td>
+                    <input type="radio" name="internet" value="y"/>Yes <br/>
+                    <input type="radio" name="internet" value="n"/>No
+                </td>
+            </tr>
+            <tr>
+                <td>Other questions:</td>
+                <td><input type="text" name="question" style="height: 80px;"></td>
+            </tr>
+        </table>
+        <br/><input type="submit" value="Search"/> <input type="reset" value="Reset"/>
+    </form>
+</body>
+</html>

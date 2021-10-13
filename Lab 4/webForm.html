@@ -1,0 +1,39 @@
+<html> 
+    <head>
+        <style type="text/css">
+            halfTab { padding-left: 0.5em;}
+            tab { padding-left: 1em; }
+            doubleTab {padding-left: 2em; }
+            quadTab {padding-left: 4em;}
+        </style>
+    </head>
+    <body>
+        <b>Whosville library book search</b>
+        <form action="http://library.whosville/bsearch" method="get">
+            Author name: <tab><input type="text" name="author"/></tab> <br>
+            Publication year:<input type="text" name="year"/> <br>
+            Subject: 
+            <tab/><input type="checkbox" name="sub" value="mth"/> Mathematics <br>
+            <halfTab/><quadTab/><input type="checkbox" name="sub" value="cs"/> Computer Science <br>
+            <halfTab/><quadTab/><input type="checkbox" name="sub" value="bio"/> Biology <br>
+            <halfTab/><quadTab/><input type="checkbox" name="sub" value="phy"/> Physics <br>
+            <halfTab/><quadTab/><input type="checkbox" name="sub" value="chem"/> Chemistry <br>
+            
+            <quadTab/><input type="submit" value="Search"/> <input type="reset" value="Clear"/>
+        </form>
+
+        <br><br><br>
+
+        <b>Ebay search</b>
+        <form action="https://www.ebay.com.au/sch/i.html?_from=R40&=" method="get">
+            Keyword: <tab><input type="text" name="_nkw"/></tab> <br>
+            <tab/><input type="radio" name="_sacat" value="550"/> Art <br>
+            <tab/><input type="radio" name="_sacat" value="267"/> Book and Magazine <br>
+            <tab/><input type="radio" name="_sacat" value="11116"/> Coins <br>
+            <tab/><input type="radio" name="_sacat" value="11233"/> Music <br>
+            <tab/><input type="radio" name="_sacat" value="260"/> Stamps <br>
+            
+            <input type="submit" value="Search"/>
+
+    </body>
+</html>

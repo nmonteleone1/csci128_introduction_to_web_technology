@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A2-Task2</title>
+    <script>
+        function calculate() {
+            var int1Input = document.getElementById("int1");
+			var int2Input = document.getElementById("int2");
+			var int3Input = document.getElementById("int3");
+			var int4Input = document.getElementById("int4");
+            var int5Input = document.getElementById("int5");
+			var int1 = Number(int1Input.value);
+			var int2 = Number(int2Input.value);
+			var int3 = Number(int3Input.value);
+			var int4 = Number(int4Input.value);
+            var int5 = Number(int5Input.value);
+            var ints = [int1, int2, int3, int4, int5];
+
+            var odd = 0;
+            var pos = 0;
+            var zeros = 0;
+            for (var i = 0; i < 5; i++) {
+                if(ints[i]%2 != 0) {
+                    odd += 1;
+                }
+                if(ints[i] > 0) {
+                    pos += 1;
+                }
+                if(ints[i] == 0) {
+                    zeros += 1;
+                }
+            }
+
+
+            sumSpan.innerHTML = int1 + int2 + int3 + int4 + int5;
+            productSpan.innerHTML = int1 * int2 * int3 * int4 * int5;
+            maxSpan.innerHTML = Math.max(int1, int2, int3, int4, int5);
+            minSpan.innerHTML = Math.min(int1, int2, int3, int4, int5);
+            oddSpan.innerHTML = odd;
+            evenSpan.innerHTML = 5-odd;
+            posSpan.innerHTML = pos;
+            negSpan.innerHTML = 5-pos-zeros;
+            zeroSpan.innerHTML = zeros;
+
+        }
+
+    </script>
+</head>
+<body>
+    Enter 1st Integer: <input type="text" id="int1" /> <br/>
+	Enter 2nd Integer: <input type="text" id="int2" /> <br/>
+	Enter 3rd Integer: <input type="text" id="int3" /> <br/>
+	Enter 4th Integer: <input type="text" id="int4" /> <br/>
+    Enter 5th Integer: <input type="text" id="int5" /> <br/>
+    <br/>
+	<button onClick="calculate()">Calculate</button>
+	<br/>
+	<span id="sumSpan"></span><br/>
+    <span id="productSpan"></span><br/>
+    <span id="maxSpan"></span><br/>
+    <span id="minSpan"></span><br/>
+    <span id="oddSpan"></span><br/>
+    <span id="evenSpan"></span><br/>
+    <span id="posSpan"></span><br/>
+    <span id="negSpan"></span><br/>
+    <span id="zeroSpan"></span>
+</body>
+</html>

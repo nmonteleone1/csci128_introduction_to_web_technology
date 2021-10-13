@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	
+</head>
+<body>
+	<!--Question 1-->
+	<h3>Question 1</h3>
+	<button onClick="console.log('Hi there! JavaScript is cool');">
+		Console Hi
+	</button>
+	<button onClick="alert('Hi there! JavaScript is cool');">
+		Alert Hi
+	</button>
+	
+	<!--Question 2-->
+	<br \> <br \>
+	<h3>Question 2</h3>
+	<button onClick="changeText('Lion');">
+		Lion
+	</button>
+	<button onClick="changeText('Frog');">
+		Frog
+	</button>
+
+	<br \> <br \>
+	<input type="text" id="textBox">
+
+	<!--Question 3-->
+	<br \> <br \>
+	<h3>Question 3</h3>
+	<button onClick="showImage('Lion');">
+		Lion
+	</button>
+	<button onClick="showImage('Frog');">
+		Frog
+	</button>
+
+	<br \> <br \>
+	<img id="image" height=300 width=300>
+
+	<!--Question 4-->
+	<br \> <br \>
+	<h3>Question 4</h3>
+	<img onClick="sound('Lion')" src="https://files.worldwildlife.org/wwfcmsprod/images/Lion_WWFGIFTS_cover_2020/magazine_small/2wafu1bmcz_b21fc8e6.jpeg" height=150 width=150>
+	<img onClick="sound('Frog')" src="https://images.newscientist.com/wp-content/uploads/2020/09/22145012/big-frog-eyes.jpg" height=150 width=150>
+	<br \> <br \>
+	<span id="animalSound"></span>
+
+	<!--Question 5-->
+	<br \> <br \>
+	<h3>Question 5</h3>
+	<img onClick="countLion()" src="https://files.worldwildlife.org/wwfcmsprod/images/Lion_WWFGIFTS_cover_2020/magazine_small/2wafu1bmcz_b21fc8e6.jpeg" height=150 width=150>
+	<img onClick="countFrog()" src="https://images.newscientist.com/wp-content/uploads/2020/09/22145012/big-frog-eyes.jpg" height=150 width=150>
+	<br \> <br \>
+	<p style="color:orange">Number of lion clicks: <span id="lionCount">0</span></p>
+	<p style="color:lightgreen">Number of frog clicks: <span id="frogCount">0</span></p>
+
+	<!--Question 6-->
+	<br \> <br \>
+	<h3>Question 6</h3>
+	<img id="image" onClick="addFrog()" src="https://images.newscientist.com/wp-content/uploads/2020/09/22145012/big-frog-eyes.jpg" height=300 width=300>
+	<br \>
+	<span id="frogFaces"></span>
+</body>
+
+<script type="text/javascript">
+	//Question 2
+	function changeText(animal) {
+		//get text field
+		var displayField = document.getElementById("textBox");
+
+		//show message
+		displayField.value = "The " + animal + " Button is clicked";
+	}	
+
+	//Question 3
+	function showImage(animal) {
+		//get image
+		var display = document.getElementById("image");
+
+		//show image
+		if(animal == 'Lion') {
+			display.src = "https://files.worldwildlife.org/wwfcmsprod/images/Lion_WWFGIFTS_cover_2020/magazine_small/2wafu1bmcz_b21fc8e6.jpeg";
+		}
+
+		else if(animal == 'Frog') {
+			display.src = "https://images.newscientist.com/wp-content/uploads/2020/09/22145012/big-frog-eyes.jpg";
+		}
+
+		else alert('Choose either "Lion" or "Frog"');
+	}	
+
+	//Question 4
+	function sound(animal) {
+		//get span to edit
+		var displayField = document.getElementById("animalSound");
+
+		//show message
+		if(animal == 'Lion') {
+			displayField.innerHTML = "Roar";
+			displayField.style.color = "orange";
+		}
+
+		else if(animal == 'Frog') {
+			displayField.innerHTML = "Ribbit";
+			displayField.style.color = "lightgreen";
+		}
+
+		else alert('Choose either "Lion" or "Frog"');
+	}
+
+	//Question 5
+	var lionClick = 0;
+	var frogClick = 0;
+	function countLion() {
+		//get span
+		var displayField = document.getElementById("lionCount");
+
+		displayField.innerHTML = (++lionClick);
+	}
+	function countFrog() {
+		//get span
+		var displayField = document.getElementById("frogCount");
+
+		displayField.innerHTML = (++frogClick);
+	}
+
+	//Question 6
+	var froggies = "";
+	function addFrog() {
+		//get span
+		var displayField = document.getElementById("frogFaces");
+
+		//add a face
+		froggies = froggies + "&#x1F438";
+		displayField.innerHTML = froggies;
+	}
+</script>
+</html>

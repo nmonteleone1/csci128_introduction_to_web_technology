@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab Programming Exercise (Week 6)</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script>
+		function showSelection() {
+			var sub1Input = document.getElementById("sub1");
+			var sub2Input = document.getElementById("sub2");
+			var sub3Input = document.getElementById("sub3");
+			var sub4Input = document.getElementById("sub4");
+			var sub1 = sub1Input.value;
+			var sub2 = sub2Input.value;
+			var sub3 = sub3Input.value;
+			var sub4 = sub4Input.value;
+
+			var selectionMessage = "You have selected " + sub1 + ", " + sub2 + ", " + sub3 + " and " + sub4;
+
+			selectionSpan.innerHTML = selectionMessage;
+		}
+
+		function checkAnswer() {
+			var num1Input = document.getElementById("num1");
+			var num2Input = document.getElementById("num2");
+			var num1 = Number(num1Input.value);
+			var num2 = Number(num2Input.value);
+
+			var operatorInput = document.getElementById("operator");
+			var operator = operatorInput.value;
+
+			var result;
+			if(operator == "add"){
+ 				result = num1 + num2;
+			}else if(operator == "subtract"){
+ 				result = num1 - num2;
+			}else if(operator == "multiply"){
+ 				result = num1 * num2;
+			}
+
+			// switch(operator){
+			// 	case "add":
+			// 		result = num1 + num2;
+			// 		checked.innerHTML = "added"
+			// 		break;
+			// 	case "subtract":
+			// 		result = num1 - num2;
+			// 		break;
+			// 	case "multiply":
+			// 		result = num1 * num2;
+			// 		break;
+			// }
+
+			var answerInput = document.getElementById("answer");
+			if (result == Number(answerInput.value)) {
+				checked.innerHTML = "Correct!";
+			}
+			else {
+				checked.innerHTML = "Incorrect, please try again.";
+			}
+
+		}
+
+		function increaseCounter() {
+			counterSpan.innerHTML = Number(counterSpan.innerHTML) + 1;
+		}
+
+		var counterSchedule;
+
+		function startCounter() {
+			if(!counterSchedule) {
+				counterSchedule = setInterval(animateCounter, 1000);
+			}
+		}
+
+		function animateCounter() {
+			counterAnimator.innerHTML = Number(counterAnimator.innerHTML) + 1;
+		}
+
+		function stopCounter() {
+			clearInterval(counterSchedule);
+			counterSchedule = null;
+		}
+
+	</script>
+</head>
+<body>
+	<h4>Question 1</h4>
+	Please select 4 subjects.
+	<br/>
+	Subject 1: <input type="text" id="sub1" /> <br/>
+	Subject 2: <input type="text" id="sub2" /> <br/>
+	Subject 3: <input type="text" id="sub3" /> <br/>
+	Subject 4: <input type="text" id="sub4" /> <br/>
+    <br/>
+	<button onClick="showSelection()">Show selection</button>
+	<br/>
+	<span id="selectionSpan"></span>
+
+	<h4>Question 2</h4>
+	<input type="text" id="num1"/>
+	<select id="operator">
+		<option value="add">+</option>
+		<option value="subtract">-</option>
+		<option value="multiply">x</option>
+	</select>
+	<input type="text" id="num2"/>
+	=
+	<input type="text" id="answer"/>
+	<button onClick="checkAnswer()">Check</button>
+	<span id="checked"></span>
+
+	<h4>Question 3</h4>
+	<button onClick="increaseCounter()">Increase counter</button>
+	<br/>
+	<span id="counterSpan">0</span>
+
+	<h4>Question 4</h4>
+	<button onClick="startCounter()">Start counter animation</button>
+	<button onClick="stopCounter()">Stop counter animation</button>
+	<br/>
+	<span id="counterAnimator">0</span>
+</body>
+</html>

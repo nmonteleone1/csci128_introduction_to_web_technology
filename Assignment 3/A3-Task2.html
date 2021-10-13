@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A3-Task2</title>
+    <script>
+
+        var studentNumber = 5055076;
+        var counter = 0;
+        var total = studentNumber;
+        var equation = "";
+
+		var counterSchedule;
+
+		function startCounter() {
+            counter = 0;
+            total = studentNumber;
+            equation = "";
+            
+			if(!counterSchedule) {
+				counterSchedule = setInterval(animateCounter, 1000);
+			}
+		}
+
+		function animateCounter() {
+            total = (++counter) + total;
+            equation = equation + " + " + counter;
+            counterEquation.innerHTML = studentNumber + equation + " = " + total;
+		}
+
+		function stopCounter() {
+			clearInterval(counterSchedule);
+			counterSchedule = null;
+		}
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <button onClick="startCounter()">Start Animation</button>
+            </td>
+            <td>
+                <button onClick="stopCounter()">Stop Animation</button>
+            </td>
+        </tr>
+    </table>
+    <span id="counterEquation"></span>
+</body>
+</html>

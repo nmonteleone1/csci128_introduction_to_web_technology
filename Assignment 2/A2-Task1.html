@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A2-Task1</title>
+    <script>
+        function addTen() {
+			counterSpan.innerHTML = Number(counterSpan.innerHTML) + 10;
+		}
+
+        function minusFive() {
+			counterSpan.innerHTML = Number(counterSpan.innerHTML) - 5;
+		}
+
+        function resetNumber() {
+			counterSpan.innerHTML = 0;
+		}
+
+    </script>
+</head>
+<body>
+    <button onClick="addTen()">Add 10</button>
+    <button onClick="minusFive()">Minus 5</button>
+    <button onClick="resetNumber()">Reset Number</button>
+	<br/>
+	<span id="counterSpan" style="color:orange; font-size: xx-large;">0</span>
+</body>
+</html>

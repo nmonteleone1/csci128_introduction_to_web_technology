@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>    
+    <title>Question 3</title>
+    <script>
+        function createJSON() {
+            var subject = {};
+            subject.code = document.getElementById("code").value;
+            subject.title = document.getElementById("title").value;
+            subject.cp = Number(document.getElementById("cp").value);
+            subject.coreFlag = document.getElementById("coreFlag").checked;
+
+            var outputJSON = JSON.stringify(subject, null, 2);
+
+            document.getElementById("outputArea").value = outputJSON;
+        }
+    </script>
+</head>
+<body>
+    Subject code: <input type="text" id="code"/><br/>
+    Subject title: <input type="text" id="title"/><br/>
+    Subject credit point: <input type="text" id="cp"/><br/>
+    Core subject: <input type="checkbox" id="coreFlag"/><br/>
+    <br/>
+    <button onClick="createJSON()">View JSON</button><br/>
+    <textarea id="outputArea" style="width: 400px; height: 100px;"></textarea>
+</body>
+</html>

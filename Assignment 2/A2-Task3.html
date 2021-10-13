@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A2-Task3</title>
+    <script>
+        var birdSources = [
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Cardinal.jpg/220px-Cardinal.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/7/74/Green_Catbird_-_Lamington_NP_-_Queensland_S4E6944_%2822198819728%29.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/0/03/Mountain_Bluebird.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Serinus_masambicus_25.jpg/800px-Serinus_masambicus_25.jpg"
+        ];
+
+        var counter = 0;
+
+        function changeBird() {
+            if(counter < 3) {counter += 1;}
+            else {counter = 0;}
+			document.getElementById("bird").src = birdSources[counter];
+		}
+
+    </script>
+</head>
+<body>
+    <img id="bird" onClick="changeBird()" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Cardinal.jpg/220px-Cardinal.jpg" height=300 width=300/>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A3-Task4</title>
+    <script>
+        var counter;
+        var num;
+		var counterSchedule;
+
+        function setNum() {
+            num = Number(document.getElementById("number").value);
+        }
+
+		function startCounter() {
+            counter = 1;
+            setNum();
+            
+			if(!counterSchedule) {
+				counterSchedule = setInterval(animateCounter, 1000);
+			}
+		}
+
+		function animateCounter() {
+            if(counter == 10) {
+                counter = 1;
+            }
+            counterEquation.innerHTML = counter + " x " + num + " = " + (counter * num);
+            counter += 1;
+		}
+
+		function stopCounter() {
+			clearInterval(counterSchedule);
+			counterSchedule = null;
+		}
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <input type="text" id="number"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onClick="startCounter()">Start Animation</button>
+            </td>
+            <td>
+                <button onClick="stopCounter()">Stop Animation</button>
+            </td>
+        </tr>
+    </table>
+    <span id="counterEquation"></span>
+</body>
+</html>
