@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<patron>
+    <firstName>John</firstName>
+    <lastName>Smith</lastName>
+    <itemList>
+        <item>
+            <title>Network security</title>
+            <authorList>
+                <author>K. Wrightson</author>
+            </authorList>
+            <callNumber>212.37/56</callNumber>
+            <due>26-07-2016</due>
+            <overdue>false</overdue>
+        </item>
+        <item>
+            <title>Analysis</title>
+            <authorList>
+                <author>T. Tao</author>
+            </authorList>
+            <callNumber>515/465</callNumber>
+            <due>23-12-2016</due>
+            <overdue>false</overdue>
+        </item>
+        <item>
+            <title>The art of computer programming</title>
+            <authorList>
+                <author>D.E. Knuth</author>
+            </authorList>
+            <callNumber>005.1/300</callNumber>
+            <due>25-11-2016</due>
+            <overdue>true</overdue>
+        </item>
+        <item>
+            <title>Python for dummies</title>
+            <authorList>
+                <author>S. Maruch</author>
+                <author>M. Renum</author>
+            </authorList>
+            <callNumber>145.3/57</callNumber>
+            <due>01-10-2016</due>
+            <overdue>true</overdue>
+        </item>
+    </itemList>
+</patron>
