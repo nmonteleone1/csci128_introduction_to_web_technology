@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>A4-Task3</title>
+    <script>
+        function makeAjaxQuery() {
+            var xhttp = new XMLHttpRequest();
+            var site = "https://explorer.api.bitcoin.com/bch/v1/block/" + document.getElementById("hash").value;
+
+            xhttp.onreadystatechange = function() {
+                readyStateChangeHandler(xhttp);
+            };
+
+            xhttp.open("GET", site, true);
+            xhttp.send();
+        }
+
+        function readyStateChangeHandler(xhttp) {
+            if (xhttp.readyState == 4) {
+                if (xhttp.status == 200) {
+                    handleStatusSuccess(xhttp);
+                } else {
+                    handleStatusFailure(xhttp);
+                }
+            } 
+        }
+
+        function handleStatusSuccess(xhttp) {
+            var jsonText = xhttp.responseText;
+
+            var obj = JSON.parse(jsonText);
+
+            displayBitcoinBlockInfo(obj);
+        }
+
+        function handleStatusFailure(xhttp) {
+            var displayDiv = document.getElementById("display");
+
+            displayDiv.innerHTML = "<font style='color:red'>Invalid bitcoin block hash</font>";
+        }
+
+        function displayBitcoinBlockInfo(obj) {
+            var html = "";
+
+            html += "<table border='1'>";
+            html += "<tr><td>Hash</td><td>" + obj.hash + "</td></tr>";
+            html += "<tr><td>Size</td><td>" + obj.size + "</td></tr>";
+            html += "<tr><td>Height</td><td>" + obj.height + "</td></tr>";
+            html += "<tr><td>Version</td><td>" + obj.version + "</td></tr>";
+            html += "<tr><td>Merkleroot</td><td>" + obj.merkleroot + "</td></tr>";
+            html += "<tr><td>Tx</td><td><ul>";
+            
+            for(var i = 0; i < obj.tx.length; i++) {
+                html += "<li>" + obj.tx[i] + "</li>";
+            }
+
+            html += "</ul></td></tr></table>";
+
+            var displayDiv = document.getElementById("display");
+            displayDiv.innerHTML = html;            
+        }
+    </script>
+</head>
+<body>
+    Enter a bitcoin block hash: <input type="text" id="hash" style="width:460px"/>
+    <br/><br/>
+    <button onClick="makeAjaxQuery()">Get Bitcoin Block Information</button>
+    <br/><br/>
+    <div id="display">
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Question 1</title>
+    <script>
+        function makeAjaxQuery() {
+            var xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function() {
+                readyStateChangeHandler(xhttp);
+            };
+
+            xhttp.open("GET", "faculty.json", true);
+            xhttp.send();
+        }
+
+        function readyStateChangeHandler(xhttp) {
+            if (xhttp.readyState == 4) {
+                if (xhttp.status == 200) {
+                    handleStatusSuccess(xhttp);
+                } else {
+                    handleStatusFailure(xhttp);
+                }
+            }
+        }
+
+        function handleStatusSuccess(xhttp) {
+            var jsonText = xhttp.responseText;
+
+            var obj = JSON.parse(jsonText);
+
+            displayFaculty(obj);
+        }
+
+        function handleStatusFailure(xhttp) {
+            var displayDiv = document.getElementById("display");
+
+            displayDiv.innerHTML = "XMLHttpRequest failed: status " + xhttp.status;
+        }
+
+        function displayFaculty(obj) {
+            var html = "<font size='5'><b>Name: </b>" + obj.name + "</font><br/>";
+            html = html + "<font size='5'><b>Abbreviation: </b>" + obj.abbreviation + "</font><br/>";
+            html = html + "<font size='5'><b>Email: </b>" + obj.email + "</font><br/>";
+            html = html + "<font size='5'><b>Web: </b>" + obj.web + "</font>";
+
+
+            var displayDiv = document.getElementById("display");
+            displayDiv.innerHTML = html;            
+        }
+    </script>
+</head>
+<body>
+    <button onClick="makeAjaxQuery()">Get Faculty Details</button>
+    <br/>
+    <div id="display">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Question 2</title>
+    <script>
+        function makeAjaxQuery() {
+            var xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function() {
+                readyStateChangeHandler(xhttp);
+            };
+
+            xhttp.open("GET", "airport.json", true);
+            xhttp.send();
+        }
+
+        function readyStateChangeHandler(xhttp) {
+            if (xhttp.readyState == 4) {
+                if (xhttp.status == 200) {
+                    handleStatusSuccess(xhttp);
+                } else {
+                    handleStatusFailure(xhttp);
+                }
+            }
+        }
+
+        function handleStatusSuccess(xhttp) {
+            var jsonText = xhttp.responseText;
+
+            var obj = JSON.parse(jsonText);
+
+            displayAirport(obj);
+        }
+
+        function handleStatusFailure(xhttp) {
+            var displayDiv = document.getElementById("display");
+
+            displayDiv.innerHTML = "XMLHttpRequest failed: status " + xhttp.status;
+        }
+
+        function displayAirport(obj) {
+            var html = "";
+            html += "<font size='5'><b>Search Query: </b>" + obj.searchQuery + "</font><br/><br/>";
+
+            html += "<table border='1'>";
+            html += "<tr><th>Airport</th><th>ICAO</th><th>IATA</th><th>Location</th></tr>";
+            
+            for(var i = 0; i < obj.searchResult.length; i++) {
+                var airportObj = obj.searchResult[i];
+
+                html += "<tr>";
+                html += "<td>" + airportObj.airportName + "</td>";
+                html += "<td>" + airportObj.ICAO + "</td>";
+                html += "<td>" + airportObj.IATA + "</td>";
+                html += "<td>" + airportObj.city + ", " + airportObj.country + "</td>";
+            }
+
+            var displayDiv = document.getElementById("display");
+            displayDiv.innerHTML = html;            
+        }
+    </script>
+</head>
+<body>
+    <button onClick="makeAjaxQuery()">Get Faculty Details</button>
+    <br/><br/>
+    <div id="display">
+        
+    </div>
+</body>
+</html>
