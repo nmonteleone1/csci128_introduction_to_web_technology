@@ -1,0 +1,50 @@
+<html> 
+    <head>
+    </head>
+    <body>
+        <b>Magatidia National University Book Delivery</b>
+        <form action="http://library.magatidia/brequest" method="get">
+            <table>
+                <tr>
+                    <th>User Type</th>
+                    <td>
+                        <input type="radio" name="utype" value="A"/>Student<br/>
+                        <input type="radio" name="utype" value="B"/>Teacher
+                    </td>
+                </tr>
+                <tr>
+                    <th>User ID</th>
+                    <td>
+                        <input type="text" name="user"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Book ID</th>
+                    <td>
+                        <input type="text" name="book"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Delivery Location</th>
+                    <td>
+                        <input type="radio" name="campus" value="MC"/>Marie Curie campus library<br/>
+                        <input type="radio" name="campus" value="G"/>Galileo campus library<br/>
+                        <input type="radio" name="campus" value="T"/>Tesla campus library
+                    </td>
+                </tr>
+                <tr>
+                    <th>Planned Use</th>
+                    <td>
+                        <input type="checkbox" name="usage" value="1"/>for course work<br/>
+                        <input type="checkbox" name="usage" value="2"/>for research<br/>
+                        <input type="checkbox" name="usage" value="3"/>for entertainment<br/>
+                        <input type="checkbox" name="usage" value="4"/>for other purposes
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: right;"><input type="submit" value="Submit"/></td>
+                    <td style="text-align: left;"><input type="reset" value="Reset"/></td>
+                </tr>
+            </table>
+    </body>
+</html>

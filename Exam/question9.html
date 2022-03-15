@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Question 9</title>
+    <script>
+        var offset = 0;
+        function moveRight() {
+            offset += 10;
+            drawStudentNumber();
+        }
+
+        function moveLeft() {
+            offset -= 10;
+            drawStudentNumber();
+        }
+
+        function drawStudentNumber() {
+                var canvas = document.getElementById("myCanvas");
+                var context = canvas.getContext("2d");
+                context.clearRect(0,0,canvas.width,canvas.height);
+                
+                //draw 5
+                context.beginPath();
+                context.moveTo(200+offset,50);
+                context.lineTo(180+offset,50);
+                context.lineTo(180+offset,70);
+                context.lineTo(200+offset,70);
+                context.lineTo(200+offset,90);
+                context.lineTo(180+offset,90);
+
+                context.strokeStyle = "purple";
+                context.lineWidth = "4";
+                context.stroke();
+
+                //draw 0
+                context.beginPath();
+                context.moveTo(230+offset,50);
+                context.lineTo(210+offset,50);
+                context.lineTo(210+offset,90);
+                context.lineTo(230+offset,90);
+                context.lineTo(230+offset,50);
+
+                context.strokeStyle = "purple";
+                context.lineWidth = "4";
+                context.stroke();
+
+                //draw 5
+                context.beginPath();
+                context.moveTo(260+offset,50);
+                context.lineTo(240+offset,50);
+                context.lineTo(240+offset,70);
+                context.lineTo(260+offset,70);
+                context.lineTo(260+offset,90);
+                context.lineTo(240+offset,90);
+
+                context.strokeStyle = "purple";
+                context.lineWidth = "4";
+                context.stroke();
+
+                //draw 5
+                context.beginPath();
+                context.moveTo(290+offset,50);
+                context.lineTo(270+offset,50);
+                context.lineTo(270+offset,70);
+                context.lineTo(290+offset,70);
+                context.lineTo(290+offset,90);
+                context.lineTo(270+offset,90);
+
+                context.strokeStyle = "purple";
+                context.lineWidth = "4";
+                context.stroke();
+
+                //draw 0
+                context.beginPath();
+                context.moveTo(320+offset,50);
+                context.lineTo(300+offset,50);
+                context.lineTo(300+offset,90);
+                context.lineTo(320+offset,90);
+                context.lineTo(320+offset,50);
+
+                context.strokeStyle = "purple";
+                context.lineWidth = "4";
+                context.stroke();
+
+                //draw 7
+                context.beginPath();
+                context.moveTo(330+offset,50);
+                context.lineTo(350+offset,50);
+                context.lineTo(350+offset,90);
+
+                context.strokeStyle = "purple";
+                context.lineWidth = "4";
+                context.stroke();
+
+                //draw 6
+                context.beginPath();
+                context.moveTo(360+offset,50);
+                context.lineTo(360+offset,90);
+                context.lineTo(380+offset,90);
+                context.lineTo(380+offset,70);
+                context.lineTo(360+offset,70);
+
+                context.strokeStyle = "purple";
+                context.lineWidth = "4";
+                context.stroke();                
+
+            };
+    </script>
+</head>
+<body>
+    <button onclick="drawStudentNumber()">Draw student number</button>
+    <button onclick="moveLeft()">Move left</button>
+    <button onclick="moveRight()">Move right</button>
+    <br/>
+    <br/>
+    <canvas id="myCanvas" width="700" height="150" style="border:2px dashed;">
+        Your browser does not support canvas.
+    </canvas>
+    <br/>
+    <br/>
+    
+    <div>
+
+    </div>
+</body>
+</html>

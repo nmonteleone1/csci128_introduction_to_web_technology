@@ -1,0 +1,21 @@
+{
+    "plate": "05WXYZ",
+    "requiredInspection": true,
+    "billingNumber": "0123987",
+    "customerNumber": "0461738",
+    "year": 2016,
+    "tareWeight": 1755,
+    "seatingCapacity": 8,
+    "engineNumber": "ABC123XY",
+    "vin": "ABCDEFG123456789XYZ",
+    "fees": [
+        {
+            "item": "Registration Fee",
+            "amount": 68.50
+        },
+        {
+            "item": "Motor Vehicle Tax",
+            "amount": 479.30
+        }
+    ]
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A3-Task2</title>
+    <script>
+
+        var studentNumber = [5,0,5,5,0,7,6];
+        var counter = 0;
+
+		var counterSchedule;
+
+		function startCounter() {
+            counter = 0;
+            
+			if(!counterSchedule) {
+				counterSchedule = setInterval(animateCounter, 1000);
+			}
+		}
+
+		function animateCounter() {
+            counter += 1;
+            var html = "";
+            var first = counter.toString();
+            var num;
+            var total;
+            
+            for(var i = 0; i < 7; i++) {
+                num = studentNumber[i].toString();
+                total = counter+studentNumber[i];
+                html += first + " + " + num + " = " + total.toString() + "<br/>";
+            }
+            counterEquation.innerHTML = html;
+		}
+
+		function stopCounter() {
+			clearInterval(counterSchedule);
+			counterSchedule = null;
+            counterEquation.innerHTML = "";
+		}
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <button onClick="startCounter()">Start Animation</button>
+            </td>
+            <td>
+                <button onClick="stopCounter()">Stop Animation</button>
+            </td>
+        </tr>
+    </table>
+    <span id="counterEquation"></span>
+</body>
+</html>

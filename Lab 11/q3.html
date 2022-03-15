@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Question 3</title>
+    <script>
+        function dragStart(event) {
+            var dragId = event.target.id;
+
+            event.dataTransfer.setData("dragId",dragId);
+        }
+
+        function dragOver(event) {
+            event.preventDefault();
+        }
+
+        function drop(event) {
+            var dropId = event.target.id;
+
+            var dragId = event.dataTransfer.getData("dragId");
+
+            if(document.getElementById(dropId).innerHTML == "dog" && dragId == "dog") {
+                document.getElementById("dogCount").innerHTML += "&#128021;";
+            }
+
+            else if(document.getElementById(dropId).innerHTML == "cat" && dragId == "cat") {
+                document.getElementById("catCount").innerHTML += "&#128008;";
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <div>Drag an animal and drop it on the corresponding text.</div>
+    <table>
+        <tr>
+            <td><span style="font-size: 50px;" id="dropDog" onDrop="drop(event)" onDragOver="dragOver(event)">dog</span><span style="font-size: 50px;" id="dogCount"></span></td>
+        </tr>
+        <tr>
+            <td><span style="font-size: 50px;" id="dropCat" onDrop="drop(event)" onDragOver="dragOver(event)">cat</span><span style="font-size: 50px;" id="catCount"></span></td>
+        </tr>
+        <tr>
+            <td>
+                <span style="font-size: 50px;" id="cat" draggable="true" onDragStart="dragStart(event)">&#128008;</span>
+                <span style="font-size: 50px;" id="dog" draggable="true" onDragStart="dragStart(event)">&#128021;</span>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

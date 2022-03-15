@@ -1,0 +1,27 @@
+{
+    "studentNumber": 5055076,
+    "uowEmail": "nm824@uowmail.edu.au",
+    "firstName": "Nicholas",
+    "lastName": "Monteleone",
+    "courseName": "Bachelor of Computer Science",
+    "majors": [
+            "Software Engineering"
+    ],
+    "subjects": [
+        {
+            "code": "CSIT128",
+            "title": "Introduction to Web Technology",
+            "creditPoint": 6
+        },
+        {
+            "code": "CSIT226",
+            "title": "Human Computer Interaction",
+            "creditPoint": 6
+        },
+        {
+            "code": "CSIT235",
+            "title": "Database Systems",
+            "creditPoint": 6
+        }
+    ]
+}
